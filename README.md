@@ -1,54 +1,82 @@
-# React + TypeScript + Vite
+![スクリーンショット](https://github.com/user-attachments/assets/e6ff893f-e8e2-4118-b8c1-11676c774374)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# イシュー管理アプリ
 
-Currently, two official plugins are available:
+## 概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+このプロジェクトでは、Notion 風のイシュー管理アプリを構築します。
 
-## Expanding the ESLint configuration
+アイデアをブロックとして管理したり、ToDo をデータベースビューでの表示・編集、複数ページでの管理機能を実装します。
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 学習目標
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+**useState、immer、useContext、zustand** を段階的に使用した状態管理の比較学習を行います。
+複雑な状態構造の管理において、各ライブラリの特徴と利点について理解を深めてください。
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 推奨技術
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+このプロジェクトの難易度と趣旨を踏まえて、以下の使用をお勧めします。
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- useState による基本的な状態管理
+- immer によるイミュータブルな記述の簡略化
+- Context API による グローバルな状態管理
+- Zustand によるグローバルでハイパフォーマンスな状態管理
+- Vite を用いた React 環境構築
+- TypeScript による型チェック
+- Tailwind CSS を用いたスタイリング
+- shadcn/ui によるコンポーネントの導入
+- GitHub Pages へのデプロイ
+
+---
+
+## 🎯 お題
+
+- 「ユーザーストーリー」を全て満たすアプリを構築してください。
+- 必要に応じて、スクリーンショットやデモサイトの URL を参照してください。
+- スタイルは、あなた自身で独自にカスタマイズすることが可能です。
+
+### 必須機能
+
+1. **アイデアブロック管理**：
+   - アイデアをブロックとして追加・削除・並び替えできる。
+2. **ToDo データベースビュー**：
+   - ToDo をテーブル形式で表示・管理する。
+3. **詳細表示**：
+   - ToDo クリックで右サイドバーに詳細ページを表示する。
+4. **ページ管理**：
+   - 複数ページの作成・切り替え・削除を行う。
+
+## ユーザーストーリー
+
+### アイデアブロック機能
+
+- [ ] ユーザーがページにアクセスすると、アイデアを入力できるフォームが表示されている。
+- [ ] 追加したアイデアが、ブロック形式で縦に一覧表示される。
+- [ ] アイデアブロックをドラッグ&ドロップで並び替えできる。
+- [ ] アイデアブロックを削除できる。
+
+### ToDo データベース機能
+
+- [ ] ToDo をテーブル形式（データベースビュー）で表示できる。
+- [ ] ToDo のタイトル、ステータス（未完了/完了）、作成日が表示される。
+- [ ] 新しい ToDo を追加できる。
+- [ ] ToDo のステータスを切り替えできる。
+- [ ] ToDo を削除できる。
+
+### 詳細表示機能
+
+- [ ] ToDo をクリックすると、右サイドバーが開き詳細が表示される。
+- [ ] サイドバーで ToDo のタイトル、説明、ステータスを編集できる。
+- [ ] サイドバーを閉じることができる。
+
+### ページ管理機能
+
+- [ ] 新しいページを作成できる。
+- [ ] ページタブでページを切り替えできる。
+- [ ] ページのタイトルを編集できる。
+- [ ] ページを削除できる（最低 1 ページは残る）。
+- [ ] 各ページで独立したアイデアブロックと ToDo を管理できる。
+
+### その他
+
+- [ ] アプリケーションがデプロイされており、誰でもアクセス可能である。
