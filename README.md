@@ -2,6 +2,8 @@
 
 # イシュー管理アプリ
 
+## デモページ: https://b13o.github.io/my-issue-tracker/
+
 ## 概要
 
 このプロジェクトでは、Notion 風のイシュー管理アプリを構築します。
